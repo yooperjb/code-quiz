@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#quiz-container {
+    width: 50%;
+    margin: 75px auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+#timer {
+    width: 90%;
+    border: 1px solid red;
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#quiz {
+    margin: 10px auto;
+    border: 1px solid green;
+    width: 90%;
+}
+
+#outcome {
+    width: 90%;
+    border-top: 2px solid gray;
+}
+
+.outcome {
+    font-style: italic;
+    font-weight: normal;
+}
