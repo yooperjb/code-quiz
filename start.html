@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,37 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 
 </head>
+
 <body>
     <main id="quiz-container">
-        <div id="timer"><h3 class="timer"></h3></div>
+        <div id="timer">
+            <h3 class="timer"></h3>
+        </div>
 
         <div id="quiz">
             <h3 class="question"></h3> <!-- Questions go here -->
             <p class="score"></p>
-            
+
             <div id="initials"></div>
-      
+            <div id="quiz-complete">
+                <label for="initialsInput">Enter Initials</label>
+                <input type="text" name="initialsInput" id="initialsInput" />
+                <button id="scoresbtn">Submit</button>
+            </div>
+            <div id="high-score">
+                
+                <ol class="high-scores"></ol>
+            </div>
+
             <ol class="options"></ol>
         </div>
-        
-        <div id="outcome"><h3 class="outcome"></h3></div>
+
+        <div id="outcome">
+            <h3 class="outcome"></h3>
+        </div>
     </main>
 
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

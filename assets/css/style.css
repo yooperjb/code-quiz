@@ -4,8 +4,16 @@
     box-sizing: border-box;
 }
 
+#quiz-complete {
+    display: none;
+}
+
+#high-score {
+    display: none;
+}
+
 #quiz-container {
-    width: 50%;
+    width: 60%;
     max-width: 650px;
     margin: 75px auto;
     border: 2px solid black;
@@ -23,10 +31,16 @@
 }
 #startbtn {
     font-size: 15px;
-    padding: 5px;
-    margin: 10px 10px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 20px 10px 50px 10px;
+    border: 1px solid gray;
+    border-radius: 8px;
 }
-
+#startbtn:hover {
+    background: rgb(35, 109, 143);
+    color: white;
+}
 #timer {
     width: 85%;
     margin: 5px auto;
@@ -34,34 +48,36 @@
     justify-content: flex-end;
     align-content: center;
 }
-
 #timer h3 {
     font-size: 20px;
     height: 25px;
     margin: 0 5px;
 }
-
 #quiz {
-    margin: 10px auto;
+    margin: 30px auto 10px auto;
     width: 90%;
 }
-#quiz h2 {
-
+.question {
+    font-size: 22px;
+    margin: 5px;
 }
 #quiz p, #start p {
-    margin: 5px 0px;
+    margin: 6px 5px;
 }
 .options {
     list-style-position: inside;
     margin-top: 5px;
+    width: 50%;
 }
 .options li {
     margin: 7px 5px;
     padding: 5px;
     background: lightblue;
+    border-radius: 5px;
 }
 .options li:hover {
     background: rgb(35, 109, 143);
+    color: white;
 }
 
 #outcome {
@@ -71,5 +87,5 @@
 .outcome {
     font-style: italic;
     font-weight: normal;
-    margin: 3px 5px;
+    margin: 3px 5px 10px 5px;
 }
