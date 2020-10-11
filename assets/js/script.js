@@ -20,6 +20,7 @@ var scoreEl = document.querySelector(".score");
 var initialsEl = document.querySelector("#initials");
 var quizCompleteEl = document.querySelector("#quiz-complete");
 var highScoreEl = document.querySelector("#high-score");
+var goBackBtnEl = document.querySelector("#go-back");
 
 //var submitBtn = document.querySelector("#scoresbtn");
 let questionNum = 0;
@@ -116,6 +117,9 @@ var endQuiz = function () {
     scoreEl.textContent = "Your final score is " + score;
 };
 
+var goHome = function () {
+    location.href = "./index.html";
+}
 // when submit button is clicked get initials and save to localStorage
 var submitBtn = document.querySelector("#scoresbtn");
 
@@ -127,6 +131,7 @@ submitBtn.addEventListener('click', function (event) {
     localStorage.setItem("initials", initialsInput.value);
     localStorage.setItem("score", score);
     quizCompleteEl.style.display = "none";
+    scoreEl.style.display = "none";
     highScoreEl.style.display = "block";
     questionEl.textContent = "High Scores";
     listItemEl = document.createElement("li");
@@ -135,4 +140,4 @@ submitBtn.addEventListener('click', function (event) {
 
 countdown();
 optionsEl.addEventListener("click", optionHandler);
-//initialsBtn.addEventListener("click", highScores);
+goBackBtnEl.addEventListener("click", goHome);

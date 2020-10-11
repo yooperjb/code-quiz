@@ -22,12 +22,14 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    box-shadow: 5px 5px 15px black;
 }
 #start {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
+    width: 80%;
 }
 #startbtn {
     font-size: 15px;
