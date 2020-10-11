@@ -18,16 +18,33 @@
 
 #timer {
     width: 90%;
-    border: 1px solid red;
-    margin: 10px auto;
+    margin: 5px auto;
     display: flex;
     justify-content: flex-end;
 }
 
+#timer h3 {
+    font-size: 18px;
+    height: 25px;
+}
+
 #quiz {
     margin: 10px auto;
-    border: 1px solid green;
     width: 90%;
+}
+#quiz p {
+    margin: 5px 5px;
+}
+.options {
+    list-style-position: inside;
+}
+.options li {
+    margin: 7px 5px;
+    padding: 5px;
+    background: lightblue;
+}
+.options li:hover {
+    background: purple;
 }
 
 #outcome {
@@ -38,4 +55,5 @@
 .outcome {
     font-style: italic;
     font-weight: normal;
+    margin: 3px 5px;
 }
