@@ -8,8 +8,7 @@ var questions = [
     {q:"How do you write 'Hello World' in an alert box:", options:["msg('Hello World')","alertBox('Hello World')","msgBox('Hello World')","alert('Hello World')"],a:3},
     {q:"How do you call a function named 'myFunction':", options:["call function myFunction()", "myFunction()", "call myFunction()", "my.function"], a:1},
     {q:"What is the proper way to write an IF statement in JavaScript:", options:["if i = 5 then", "if i == 5 then", "If (i === 5)", "if i=5"], a:2},
-    {q:"How can you write a JavaScript comment:", options:["<!-- This is a comment -->", "'This is a comment", "//This is a comment","*This is a comment"], a:2},
-
+    {q:"How can you write a JavaScript comment:", options:["<!-- This is a comment -->", "'This is a comment", "//This is a comment","*This is a comment"], a:2}
 ];
 
 var timerEl = document.querySelector(".timer");
@@ -24,7 +23,7 @@ let score = 0;
 
 var countdown = function() {
     // Set Timer duration for quiz
-    var timer = 10;
+    var timer = 90;
 
     //use setInterval for countdown timer
     var timeInterval = setInterval(function(){
@@ -37,11 +36,9 @@ var countdown = function() {
             timerEl.textContent = "";
             endQuiz();
         }
-        
     },1000);
 
         writeQuestion(questionNum);
-    
 };
 
 

@@ -6,6 +6,7 @@
 
 #quiz-container {
     width: 50%;
+    max-width: 650px;
     margin: 75px auto;
     border: 2px solid black;
     border-radius: 15px;
@@ -13,30 +14,46 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
+}
+#start {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+#startbtn {
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px 10px;
 }
 
 #timer {
-    width: 90%;
+    width: 85%;
     margin: 5px auto;
     display: flex;
     justify-content: flex-end;
+    align-content: center;
 }
 
 #timer h3 {
-    font-size: 18px;
+    font-size: 20px;
     height: 25px;
+    margin: 0 5px;
 }
 
 #quiz {
     margin: 10px auto;
     width: 90%;
 }
-#quiz p {
-    margin: 5px 5px;
+#quiz h2 {
+
+}
+#quiz p, #start p {
+    margin: 5px 0px;
 }
 .options {
     list-style-position: inside;
+    margin-top: 5px;
 }
 .options li {
     margin: 7px 5px;
@@ -44,14 +61,13 @@
     background: lightblue;
 }
 .options li:hover {
-    background: purple;
+    background: rgb(35, 109, 143);
 }
 
 #outcome {
     width: 90%;
     border-top: 2px solid gray;
 }
-
 .outcome {
     font-style: italic;
     font-weight: normal;
