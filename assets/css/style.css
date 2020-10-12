@@ -4,32 +4,16 @@
     box-sizing: border-box;
 }
 
-#quiz-complete {
-    display: none;
-}
-
-#high-score {
-    display: none;
-}
-
-#quiz-container {
-    width: 60%;
-    max-width: 650px;
-    margin: 75px auto;
-    border: 2px solid black;
-    border-radius: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 5px 5px 15px black;
-}
+/* Start page styles */
 #start {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
     width: 80%;
+}
+.welcome {
+    margin-bottom: 5px;
 }
 #startbtn {
     font-size: 15px;
@@ -43,9 +27,12 @@
     background: rgb(35, 109, 143);
     color: white;
 }
+/* End start page styles */
+
+/* Timer area styles */
 #timer {
     width: 85%;
-    margin: 5px auto;
+    margin: 15px auto 5px;
     display: flex;
     justify-content: flex-end;
     align-content: center;
@@ -53,18 +40,32 @@
 #timer h3 {
     font-size: 20px;
     height: 25px;
-    margin: 0 5px;
+}
+/* End Timer Styles */
+
+/* Quiz Area Styles */
+#quiz-container {
+    width: 60%;
+    max-width: 650px;
+    margin: 75px auto;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 5px 5px 15px black;
 }
 #quiz {
-    margin: 30px auto 10px auto;
-    width: 90%;
+    margin: 20px auto 10px auto;
+    width: 80%;
 }
 .question {
     font-size: 22px;
     margin: 5px;
 }
 #quiz p, #start p {
-    margin: 6px 5px;
+    margin: 6px 0px;
 }
 .options, .high-scores {
     list-style-position: inside;
@@ -81,7 +82,40 @@
     background: rgb(35, 109, 143);
     color: white;
 }
+/* End Quiz Area Styles */
 
+/* Quiz Complete Styles */
+#quiz-complete {
+    display: none;
+}
+#initialsInput {
+    height: 22px;
+    font-size: 15px;
+    width: 100px;
+}
+/* End Quiz Complete Styles */
+
+/* High Score Styles */
+#high-score {
+    display: none;
+}
+#high-score-buttons {
+    margin: 12px 0px;
+}
+.smlbutton {
+    background: lightblue;
+    border: 1px solid gray;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 5px;
+}
+.smlbutton:hover {
+    background: rgb(35, 109, 143);
+    color: white;
+}
+/* End High Score Styles */
+
+/* Answer Outcome Area Styles */
 #outcome {
     width: 90%;
     border-top: 2px solid gray;
@@ -91,11 +125,4 @@
     font-weight: normal;
     margin: 3px 5px 10px 5px;
 }
-
-#high-score-buttons {
-    margin: 12px 0px;
-}
-#high-score-buttons button {
-    font-size: 12px;
-    padding: 5px;
-}
+/* End Answer Outcome Area Styles */

@@ -11,25 +11,24 @@
 
 <body>
     <main id="quiz-container">
-        <div id="timer">
-            <h3 class="timer"></h3>
-        </div>
+        <div id="timer"><h3 class="timer"></h3></div>
 
+        <!-- Quiz area -->
         <div id="quiz">
-            <h3 class="question"></h3> <!-- Questions go here -->
-            <p class="score"></p>
-
-            <div id="initials"></div>
+            <h3 class="question"></h3>
+            
             <div id="quiz-complete">
+                <p class="quiz-score"></p>
                 <label for="initialsInput">Enter Initials (FML)</label>
                 <input type="text" name="initialsInput" id="initialsInput" />
-                <button id="scoresbtn">Submit</button>
+                <button class="smlbutton" id="scoresbtn">Submit</button>
             </div>
+
             <div id="high-score">
                 <ol class="high-scores"></ol>
                 <div id="high-score-buttons">
-                    <button id="go-back">Go Back</button>
-                    <button id="clear-scores">Clear High Scores</button>
+                    <button class="smlbutton" id="go-back">Go Back</button>
+                    <button class="smlbutton" id="clear-scores">Clear High Scores</button>
                 </div>
             </div>
 
@@ -41,7 +40,9 @@
         </div>
     </main>
 
+    <script src="./assets/js/questions.js"></script>
     <script src="./assets/js/script.js"></script>
+    
 </body>
 
 </html>

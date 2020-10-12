@@ -1,25 +1,9 @@
-var questions = [
-    { q: "What does API stand for?", options: ["Application Persistence Index", "Application Programming Interface", "American Petroleum Institute", "Array Processing Index"], a: 1 },
-    { q: "A very useful tool used during development and debugging for printing content to the debugger is:", options: ["JavaScript", "for loops", "console.log", "gitbash"], a: 2 },
-    { q: "Commonly used data types do NOT include:", options: ["strings", "booleans", "numbers", "alerts"], a: 3 },
-    { q: "Arrays in JavaScript can be used to store:", options: ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], a: 3 },
-    { q: "Inside which HTML element do we put the JavaScript:", options: ["<script>", "<js>", "<scripting>", "<javascript>"], a: 0 },
-    { q: "Where is the correct place to insert a JavaScript:", options: ["The <head> section", "The <body> section", "The <main> section", "Both the <body> and <head>"], a: 3 },
-    { q: "How do you write 'Hello World' in an alert box:", options: ["msg('Hello World')", "alertBox('Hello World')", "msgBox('Hello World')", "alert('Hello World')"], a: 3 },
-    { q: "How do you call a function named 'myFunction':", options: ["call function myFunction()", "myFunction()", "call myFunction()", "my.function"], a: 1 },
-    { q: "What is the proper way to write an IF statement in JavaScript:", options: ["if i = 5 then", "if i == 5 then", "If (i === 5)", "if i=5"], a: 2 },
-    { q: "How can you write a JavaScript comment:", options: ["<!-- This is a comment -->", "'This is a comment", "//This is a comment", "*This is a comment"], a: 2 }
-];
-
-//let highScores = [];
-
 var timerEl = document.querySelector(".timer");
 var questionEl = document.querySelector(".question");
 var optionsEl = document.querySelector(".options");
 var highScoresListEl = document.querySelector(".high-scores");
 var outcomeEl = document.querySelector(".outcome");
-var scoreEl = document.querySelector(".score");
-var initialsEl = document.querySelector("#initials");
+var finalScoreEl = document.querySelector(".quiz-score");
 var quizCompleteEl = document.querySelector("#quiz-complete");
 var highScoreEl = document.querySelector("#high-score");
 var goBackBtnEl = document.querySelector("#go-back");
@@ -37,15 +21,14 @@ var countdown = function () {
         timerEl.textContent = "Time: " + timer;
         timer--;
         
-        console.log("Question Num= " +questionNum);
-        // when timer reaches zero end quiz
+        console.log("Question Num= " + questionNum);
+        // when timer reaches zero or questions end, stop quiz
         if (timer <= 0 || questionNum === questions.length) {
             clearInterval(timeInterval);
-            //timerEl.textContent = "";
             endQuiz();
         }
     }, 1000);
-
+    // As timer decreases write out questions
     writeQuestion(questionNum);
 };
 
@@ -63,7 +46,6 @@ var writeQuestion = function (num) {
             listItemEl.setAttribute("option-num", i);
             // append option items to options list
             optionsEl.appendChild(listItemEl).textContent = questions[num].options[i];
-            //console.log("Option: " + questions[num].options[i]);
         }
     }
     else {
@@ -117,7 +99,7 @@ var endQuiz = function () {
     questionEl.textContent = "All Done!";
 
     // display score and save to localStorage
-    scoreEl.textContent = "Your final score is " + score;
+    finalScoreEl.textContent = "Your final score is " + score;
 };
 
 var goHome = function () {
@@ -159,7 +141,7 @@ var submitInitials = function(event) {
 
         // remove DOM elements
         quizCompleteEl.style.display = "none";
-        scoreEl.style.display = "none";
+        finalScoreEl.style.display = "none";
 
         // add DOM elements
         highScoreEl.style.display = "block";
