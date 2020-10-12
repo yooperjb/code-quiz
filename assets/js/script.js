@@ -11,7 +11,7 @@ var questions = [
     { q: "How can you write a JavaScript comment:", options: ["<!-- This is a comment -->", "'This is a comment", "//This is a comment", "*This is a comment"], a: 2 }
 ];
 
-let highScores = [];
+//let highScores = [];
 
 var timerEl = document.querySelector(".timer");
 var questionEl = document.querySelector(".question");
@@ -32,16 +32,16 @@ let score = 0;
 let timer = 90;
 
 var countdown = function () {
-
     //use setInterval for countdown timer
     var timeInterval = setInterval(function () {
         timerEl.textContent = "Time: " + timer;
         timer--;
-
+        
+        console.log("Question Num= " +questionNum);
         // when timer reaches zero end quiz
-        if (timer <= 0) {
+        if (timer <= 0 || questionNum === questions.length) {
             clearInterval(timeInterval);
-            timerEl.textContent = "";
+            //timerEl.textContent = "";
             endQuiz();
         }
     }, 1000);
@@ -144,9 +144,14 @@ var submitInitials = function(event) {
     }
     
     else {
-        // get scores from local storage and convert to object
+        // get scores from local storage and convert to object. Check if null.
         savedScores = localStorage.getItem("scores");
-        savedScores = JSON.parse(savedScores);
+        if (savedScores){
+            savedScores = JSON.parse(savedScores);
+        }
+        else {
+            savedScores = [];
+        }
 
         // add current score to savedScores, convert and set to localStorage
         savedScores.push({name: initialsInput.value, score: score});
