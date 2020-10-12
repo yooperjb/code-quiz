@@ -66,12 +66,12 @@
 #quiz p, #start p {
     margin: 6px 5px;
 }
-.options {
+.options, .high-scores {
     list-style-position: inside;
     margin-top: 5px;
     width: 50%;
 }
-.options li {
+.options li, .high-scores li {
     margin: 7px 5px;
     padding: 5px;
     background: lightblue;
@@ -90,4 +90,12 @@
     font-style: italic;
     font-weight: normal;
     margin: 3px 5px 10px 5px;
+}
+
+#high-score-buttons {
+    margin: 12px 0px;
+}
+#high-score-buttons button {
+    font-size: 12px;
+    padding: 5px;
 }

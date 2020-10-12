@@ -11,6 +11,8 @@ var questions = [
     { q: "How can you write a JavaScript comment:", options: ["<!-- This is a comment -->", "'This is a comment", "//This is a comment", "*This is a comment"], a: 2 }
 ];
 
+let highScores = [];
+
 var timerEl = document.querySelector(".timer");
 var questionEl = document.querySelector(".question");
 var optionsEl = document.querySelector(".options");
@@ -21,8 +23,9 @@ var initialsEl = document.querySelector("#initials");
 var quizCompleteEl = document.querySelector("#quiz-complete");
 var highScoreEl = document.querySelector("#high-score");
 var goBackBtnEl = document.querySelector("#go-back");
+var clearScoreBtnEl = document.querySelector("#clear-scores");
+var submitInitialsBtn = document.querySelector("#scoresbtn");
 
-//var submitBtn = document.querySelector("#scoresbtn");
 let questionNum = 0;
 let score = 0;
 // Set Timer duration for quiz
@@ -120,24 +123,55 @@ var endQuiz = function () {
 var goHome = function () {
     location.href = "./index.html";
 }
-// when submit button is clicked get initials and save to localStorage
-var submitBtn = document.querySelector("#scoresbtn");
 
-submitBtn.addEventListener('click', function (event) {
+// Clear Scores from localStorage
+var clearScores = function (event) {
+    event.preventDefault();
+    localStorage.setItem("scores", "");
+    highScoresListEl.textContent = "";
+}
+
+// when submit button is clicked get initials and save to localStorage
+var submitInitials = function(event) {
     event.preventDefault();
     // get values from initials input text box
     var initialsInput = document.querySelector("#initialsInput");
-    console.log(initialsInput.value+"'s scores is: " + score)
-    localStorage.setItem("initials", initialsInput.value);
-    localStorage.setItem("score", score);
-    quizCompleteEl.style.display = "none";
-    scoreEl.style.display = "none";
-    highScoreEl.style.display = "block";
-    questionEl.textContent = "High Scores";
-    listItemEl = document.createElement("li");
-    highScoresListEl.appendChild(listItemEl).textContent = initialsInput.value + " - " + score;
-});
+    
+    // check initials not three characters alert user
+    if (!(initialsInput.value.length === 3)) {
+        window.alert("Please Enter Your 3 Initials");
+        initialsInput.value = "";
+    }
+    
+    else {
+        // get scores from local storage and convert to object
+        savedScores = localStorage.getItem("scores");
+        savedScores = JSON.parse(savedScores);
 
+        // add current score to savedScores, convert and set to localStorage
+        savedScores.push({name: initialsInput.value, score: score});
+        localStorage.setItem("scores", JSON.stringify(savedScores));
+
+        // remove DOM elements
+        quizCompleteEl.style.display = "none";
+        scoreEl.style.display = "none";
+
+        // add DOM elements
+        highScoreEl.style.display = "block";
+        questionEl.textContent = "High Scores";
+        
+        // create list elements of High Scores
+        for (let i=0; i < savedScores.length; i++) {
+            listItemEl = document.createElement("li");
+            highScoresListEl.appendChild(listItemEl).textContent = savedScores[i].name + " - " + savedScores[i].score;
+        }
+    }
+};
+
+// run countdown on page load
 countdown();
+
 optionsEl.addEventListener("click", optionHandler);
 goBackBtnEl.addEventListener("click", goHome);
+clearScoreBtnEl.addEventListener("click", clearScores);
+submitInitialsBtn.addEventListener("click", submitInitials);
