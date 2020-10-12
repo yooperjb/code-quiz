@@ -1,5 +1,7 @@
 # JavaScript Code Quiz
-This is my solution to a JavaScript Code Quiz Challenge. You can view the live demo or download the code to edit or run. 
+![password_generator](https://img.shields.io/github/languages/top/yooperjb/password_generator)  ![GitHub language count](https://img.shields.io/github/languages/count/yooperjb/password_generator)
+
+This is my solution to a JavaScript Code Quiz Challenge. You can view the [live demo](https://yooperjb.github.io/code-quiz/) or [download the code](https://github.com/yooperjb/code-quiz) to edit or run. 
 
 ## Project Status 10/20
 Everything works but I plan to clean up the layout of the quiz and refactor the code to make it easier to read. 
@@ -17,7 +19,7 @@ When either the time expires or the questions are completed the quiz stops, the 
 I used JavaScript, HTML, and CSS for the challenge. The quiz consits of two HTML pages, the entrance page and the interactive quiz page. During the quiz process, the page elements are altered using the DOM, rather than new HTML pages. 
 
 ## Viewing the Quiz
-The easiest way to see the challenge solution is to view the live demo on GitHub Pages. You can also view, clone, and download the project repository via GitHub. 
+The easiest way to see the challenge solution is to view the [live demo](https://yooperjb.github.io/code-quiz/) on GitHub Pages. You can also view, clone, and download the [project repository](https://github.com/yooperjb/code-quiz) via GitHub. 
 
 ## Resources
 Any resources that I may have used will be listed here.
